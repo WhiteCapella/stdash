@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 COPY ./requirements.txt /code/requirements.txt
 COPY src/stdash/app.py /code/
 
-RUN pip install -r requirements.txt
+RUN pip install -r /code/requirements.txt
 
 EXPOSE 8501
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
